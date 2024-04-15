@@ -12,11 +12,14 @@ struct BackgroundView: View {
     @Binding var isNight: Bool
     
     var body: some View {
-//        LinearGradient(gradient: Gradient(colors: [isNight ? .black : .blue, Color(isNight ? "grey" : "lightBlue")]), startPoint: .topLeading, endPoint: .bottomTrailing)
-//            .edgesIgnoringSafeArea(.all)
-        ContainerRelativeShape()
-            .fill( isNight ? Color.black.gradient : Color.blue.gradient)
-            .ignoresSafeArea()
+        LinearGradient(gradient: Gradient(colors: [isNight ? .black : .blue, Color(isNight ? "grey" : "lightBlue")]), startPoint: .topLeading, endPoint: .bottomTrailing)
+            .edgesIgnoringSafeArea(.all)
+//        ContainerRelativeShape()
+//            .fill( isNight ? Color.black.gradient : Color.blue.gradient)
+//            .ignoresSafeArea()
     }
 }
 
+#Preview {
+    BackgroundView(isNight: .constant(false))
+}
